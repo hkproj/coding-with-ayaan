@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
+</head>
+<body>
+    <script>
+        // Create the application helper and add its render target to the page
+        let app = new PIXI.Application({ width: 640, height: 360, background: 'white' });
+        app.view.style.border = '1px dashed black';
+        document.body.appendChild(app.view);
+
+        // Create the sprite and add it to the stage
+        let ayaan = PIXI.Sprite.from('images/man2_fr1.gif');
+        app.stage.addChild(ayaan);
+
+        ayaan.x = 75;
+        ayaan.y = 200;
+        
+        // Create the sprite and add it to the stage
+        let zoya = PIXI.Sprite.from('images/wnv2_fr1.gif');
+        app.stage.addChild(zoya);
+
+        zoya.x = 50;
+        zoya.y = 50;
+
+        // Create the sprite and add it to the stage
+        let hasan = PIXI.Sprite.from('images/ygr1_fr2.gif');
+        app.stage.addChild(hasan);
+
+        hasan.x = 100;
+        hasan.y = 100;
+
+        // Add a ticker callback to move the sprite back and forth
+        let elapsed = 0.0;
+        app.ticker.add((delta) => {
+            ayaan.angle += 1;
+        });
+    </script>
+</body>
+</html>
